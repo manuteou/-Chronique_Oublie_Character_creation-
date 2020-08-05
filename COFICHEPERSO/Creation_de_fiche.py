@@ -1,6 +1,6 @@
 import random
-from COFICHEPERSO import Personnages
-from COFICHEPERSO import Caracteristiques
+from COFICHEPERSO.Personnages import Personnages
+from COFICHEPERSO.Caracteristiques import Caractéristiques
 
 roll = [random.randint(3,18) for r in range(6)] # Dés lancées pour la valeurs des caractériqtiques du personnage
 
@@ -43,8 +43,7 @@ def poids_choix():
 
 print ("BIENVENUE SUR LE GENERATEUR DE PERSONNAGE CHRONIQUE OUBLIEE")
 
-Fichier_joueur = {}
-Joueur_Perso = Personnages.Personnages()
+Joueur_Perso = Personnages()
 
 nom = input("Bonjour aventurier, quel est ton prénom :")
 nom_hero = input("Quel nom veux tu donner à ton personnage :")
@@ -64,13 +63,12 @@ Joueur_Perso.set_age(age)
 Joueur_Perso.set_taille(taille)
 Joueur_Perso.set_poids()
 
-Fichier_joueur[Joueur_Perso.get_nom_joueur] = Joueur_Perso
 print(f"Le personnage {Joueur_Perso.get_nom_personnage() }, jouer par {Joueur_Perso.get_nom_joueur()} /"
       f"va tirer ses attributs")
 
 
 print (f"Valeurs du lancé de dé : {roll}")
-Joueur_Carac = Caracteristiques.Caractéristiques()
+Joueur_Carac = Caractéristiques()
 force = int(input("Quelle valeur pour la caracteristique force :"))
 Joueur_Carac.set_force(attribution(force))
 
