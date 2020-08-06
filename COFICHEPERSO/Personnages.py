@@ -1,6 +1,8 @@
+from COFICHEPERSO.Caracteristiques import Caractéristiques
+
 class Personnages:
     """" Class qui definie le type  du personnage et son aspect physique"""
-    def __init__(self,nom_personnage ='Toto',nom_joueur = 'Toto',profile = 'Dieu',niveau = 0,race ='moi',sexe = 'MF',age = 1 ,taille = 2,poids = 10):
+    def __init__(self,nom_personnage ,nom_joueur ,profile = 'Dieu',niveau = 0,race,sexe = 'MF',age = 1 ,taille = 2,poids = 10):
         self.nom_personnage = nom_personnage
         self.nom_joueur = nom_joueur
         self.profile = profile
@@ -10,6 +12,8 @@ class Personnages:
         self.age = age
         self.taille = taille
         self.poids = poids
+        self.caracteristique = Caractéristiques
+
 
     def get_nom_personnage(self):
         return self.nom_personnage
@@ -18,7 +22,7 @@ class Personnages:
         self.nom_personnage = nom_personnage
 
     def get_nom_joueur(self):
-        return self._nom_joueur
+        return self.nom_joueur
 
     def set_nom_joueur(self, nom_joueur):
         self.nom_joueur = nom_joueur
