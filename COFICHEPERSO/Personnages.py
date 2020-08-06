@@ -2,7 +2,7 @@ from COFICHEPERSO.Caracteristiques import Caractéristiques
 
 class Personnages:
     """" Class qui definie le type  du personnage et son aspect physique"""
-    def __init__(self,nom_personnage ,nom_joueur ,profile = 'Dieu',niveau = 0,race,sexe = 'MF',age = 1 ,taille = 2,poids = 10):
+    def __init__(self,nom_personnage ,nom_joueur ,race,profile = 'Dieu',niveau = 0,sexe = 'MF',age = 1 ,taille = 2,poids = 10):
         self.nom_personnage = nom_personnage
         self.nom_joueur = nom_joueur
         self.profile = profile
@@ -68,6 +68,8 @@ class Personnages:
 
     def set_poids(self,poids):
         self.poids = poids
+
+
 
 
 

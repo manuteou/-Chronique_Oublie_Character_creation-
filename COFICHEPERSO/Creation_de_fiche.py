@@ -35,7 +35,7 @@ val = input(" Rentres le numero pour choisir ta race : \n \t 1 - Demi-Elfe\n"
 genre = input ("Est tu de genre (M)asculine ou F(eminin) ou (A)utre ?")
 
 debut = True
-while debut:
+while debut: # Définition de la race qui permet de generer les autres valeurs du perso ainsi que les bonus de classe
     if val == 1:
         race = "Demi-Elfe"
         age = random.randint(20,100)
@@ -55,51 +55,49 @@ while debut:
         debut = False
     elif val == 3:
         race = "Elfe-Haut"
-        age = random.randint(15,50)
-        poids = random.randint(40, 80)
-        taille = random.uniform(1.70, 2.10)
-        str = 2
-        inte = -2
+        age = random.randint(80,400)
+        poids = random.randint(40, 70)
+        taille = random.uniform(1.50, 1.80)
+        str = -2
+        cha = 2
         debut = False
-    elif val == 2:
+    elif val == 4:
         race = "Elfe-Sylvain"
-        age = random.randint(15,50)
-        poids = random.randint(40, 80)
-        taille = random.uniform(1.70, 2.10)
-        str = 2
-        inte = -2
+        age = random.randint(50,300)
+        poids = random.randint(30, 60)
+        taille = random.uniform(1.40, 1.70)
+        str = -2
+        dex = 2
         debut = False
-    elif val == 2:
+    elif val == 5:
         race = "Gnome"
-        age = random.randint(15,50)
-        poids = random.randint(40, 80)
-        taille = random.uniform(1.70, 2.10)
-        str = 2
-        inte = -2
+        age = random.randint(40,250)
+        poids = random.randint(30, 50)
+        taille = random.uniform(1, 1.20)
+        str = -2
+        inte = 2
         debut = False
-    elif val == 2:
+    elif val == 6:
         race = "Halflain"
-        age = random.randint(15,50)
-        poids = random.randint(40, 80)
-        taille = random.uniform(1.70, 2.10)
-        str = 2
-        inte = -2
+        age = random.randint(20,100)
+        poids = random.randint(20, 30)
+        taille = random.uniform(0.80, 1)
+        str = -2
+        dex = 2
         debut = False
-    elif val == 2:
+    elif val == 7:
         race = "Humain"
-        age = random.randint(15,50)
-        poids = random.randint(40, 80)
-        taille = random.uniform(1.70, 2.10)
-        str = 2
-        inte = -2
+        age = random.randint(18,100)
+        poids = random.randint(40, 120)
+        taille = random.uniform(1.50, 2.00)
         debut = False
-    elif val == 2:
+    elif val == 8:
         race = "Nain"
-        age = random.randint(15,50)
-        poids = random.randint(40, 80)
-        taille = random.uniform(1.70, 2.10)
-        str = 2
-        inte = -2
+        age = random.randint(40,200)
+        poids = random.randint(50, 100)
+        taille = random.uniform(1.15, 1.35)
+        con = 2
+        dex = -2
         debut = False
 
 
@@ -109,10 +107,22 @@ Joueur_Perso = Personnages(nom_personnage=nom,nom_joueur=nom_hero,race=race,age=
 print(f"Le personnage {Joueur_Perso.get_nom_personnage() }, jouer par {Joueur_Perso.get_nom_joueur()},\ "
       f"tu vas tirer ses attributs")
 
-
+#Attribution des characteristiques
 print (f"Valeurs du lancé de dé : {roll}")
-Joueur_Carac = Caractéristiques()
-force = int(input("Quelle valeur pour la caracteristique force :"))
-Joueur_Carac.set_force(attribution(force))
+choix = int(input("Quelle valeur pour la caracteristique force :"))
+str += attribution(choix)
+choix = int(input("Quelle valeur pour la caracteristique Dexterité :"))
+dex += attribution(choix)
+choix = int(input("Quelle valeur pour la caracteristique Constitution :"))
+con += attribution(choix)
+choix = int(input("Quelle valeur pour la caracteristique Intelligence :"))
+inte += attribution(choix)
+choix = int(input("Quelle valeur pour la caracteristique Sagesse :"))
+sag += attribution(choix)
+choix = int(input("Quelle valeur pour la caracteristique Charisme :"))
+cha += attribution(choix)
+
+Joueur_charac = Caractéristiques(str,dex,con,inte,sag,cha)
+
 
 
