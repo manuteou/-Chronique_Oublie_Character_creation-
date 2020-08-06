@@ -29,10 +29,11 @@ print ("BIENVENUE SUR LE GENERATEUR DE PERSONNAGE CHRONIQUE OUBLIEE")
 
 nom = input("Bonjour aventurier, quel est ton prénom :")
 nom_hero = input("Quel nom veux tu donner à ton personnage :")
-val = input(" Rentres le numero pour choisir ta race : \n \t 1 - Demi-Elfe\n"
-             "\t 2 - Demi-Orques\n \t 3 - Elfe Haut\n \t 4 - Elfe Sylvain\n \t 5 - Gnome\n "
-             "\t 6 - Halfelin\n \t 7 - Humain\n \t 8 - Nain \n")
 genre = input ("Est tu de genre (M)asculine ou F(eminin) ou (A)utre ?")
+val = int(input(" Rentres le numero pour choisir ta race : \n \t 1 - Demi-Elfe\n"
+             "\t 2 - Demi-Orques\n \t 3 - Elfe Haut\n \t 4 - Elfe Sylvain\n \t 5 - Gnome\n "
+             "\t 6 - Halfelin\n \t 7 - Humain\n \t 8 - Nain \n"))
+
 
 debut = True
 while debut: # Définition de la race qui permet de generer les autres valeurs du perso ainsi que les bonus de classe
@@ -99,6 +100,8 @@ while debut: # Définition de la race qui permet de generer les autres valeurs d
         con = 2
         dex = -2
         debut = False
+    else:
+        val = int(input("Mauvaise valeur, rentrez une chiffre valable : "))
 
 
 Joueur_Perso = Personnages(nom_personnage=nom,nom_joueur=nom_hero,race=race,age=age,poids=poids,taille=taille,
