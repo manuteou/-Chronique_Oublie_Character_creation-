@@ -1,9 +1,11 @@
+from pprint import pprint
 import random
 from COFICHEPERSO.Personnages import Personnages
 from COFICHEPERSO.Caracteristiques import Caractéristiques
 
 roll = [random.randint(3,18) for r in range(6)] # Dés lancées pour la valeurs des caractériqtiques du personnage
 
+str= dex= con= inte= sag= cha = 0
 
 def attribution(valeur_choisie):
     """fonction qui permet d'attirbuer les valeurs du lancé de dé et d'effacer la valeur"""
@@ -111,21 +113,25 @@ print(f"Le personnage {Joueur_Perso.get_nom_personnage() }, jouer par {Joueur_Pe
       f"tu vas tirer ses attributs")
 
 #Attribution des characteristiques
+Joueur_Perso.caracteristique = Caractéristiques()
 print (f"Valeurs du lancé de dé : {roll}")
 choix = int(input("Quelle valeur pour la caracteristique force :"))
-str += attribution(choix)
+Joueur_Perso.caracteristique.set_force(attribution(choix)+str)
+print (f"Valeurs du lancé de dé : {roll}")
 choix = int(input("Quelle valeur pour la caracteristique Dexterité :"))
-dex += attribution(choix)
+Joueur_Perso.caracteristique.set_dexterité(attribution(choix)+dex)
+print (f"Valeurs du lancé de dé : {roll}")
 choix = int(input("Quelle valeur pour la caracteristique Constitution :"))
-con += attribution(choix)
+Joueur_Perso.caracteristique.set_constitution(attribution(choix)+con)
+print (f"Valeurs du lancé de dé : {roll}")
 choix = int(input("Quelle valeur pour la caracteristique Intelligence :"))
-inte += attribution(choix)
+Joueur_Perso.caracteristique.set_inteligence(attribution(choix)+inte)
+print (f"Valeurs du lancé de dé : {roll}")
 choix = int(input("Quelle valeur pour la caracteristique Sagesse :"))
-sag += attribution(choix)
+Joueur_Perso.caracteristique.set_sagesse(attribution(choix)+sag)
+print (f"Valeurs du lancé de dé : {roll}")
 choix = int(input("Quelle valeur pour la caracteristique Charisme :"))
-cha += attribution(choix)
-
-Joueur_charac = Caractéristiques(str,dex,con,inte,sag,cha)
+Joueur_Perso.caracteristique.set_charisme(attribution(choix)+cha)
 
 
-
+pprint(Joueur_Perso)
