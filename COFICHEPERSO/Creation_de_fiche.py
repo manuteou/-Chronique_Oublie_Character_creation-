@@ -5,7 +5,7 @@ from COFICHEPERSO.Caracteristiques import Caractéristiques
 
 roll = [random.randint(3,18) for r in range(6)] # Dés lancées pour la valeurs des caractériqtiques du personnage
 
-str= dex= con= inte= sag= cha = 0
+str = dex = con = inte = sag = cha = 0
 
 def attribution(valeur_choisie):
     """fonction qui permet d'attirbuer les valeurs du lancé de dé et d'effacer la valeur"""
@@ -113,7 +113,7 @@ print(f"Le personnage {Joueur_Perso.get_nom_personnage() }, jouer par {Joueur_Pe
       f"tu vas tirer ses attributs")
 
 #Attribution des characteristiques
-Joueur_Perso.caracteristique = Caractéristiques()
+
 print (f"Valeurs du lancé de dé : {roll}")
 choix = int(input("Quelle valeur pour la caracteristique force :"))
 Joueur_Perso.caracteristique.set_force(attribution(choix)+str)
@@ -133,5 +133,13 @@ print (f"Valeurs du lancé de dé : {roll}")
 choix = int(input("Quelle valeur pour la caracteristique Charisme :"))
 Joueur_Perso.caracteristique.set_charisme(attribution(choix)+cha)
 
+print(f"\tJoueur {Joueur_Perso.get_nom_joueur}\t Nom du Heros {Joueur_Perso.get_nom_personnage}"
+      f"\t Niveau {Joueur_Perso.get_niveau}\n\t Age {Joueur_Perso.get_age} \t Taille {Joueur_Perso.get_taille}"
+      f"\t Poids {Joueur_Perso.set_poids}\t Sexe {Joueur_Perso.set_sexe}\n \t Force : {Joueur_Perso.caracteristique.get_force}"
+      f"\n\t Dexterité :{Joueur_Perso.caracteristique.get_dexterité}\n\t Intelligence : {Joueur_Perso.caracteristique.get_inteligence}"
+      f"\n\t Constitution {Joueur_Perso.caracteristique.get_constitution}\n\t Charisme :{Joueur_Perso.caracteristique.get_charisme}"
+      f"\n\t Sagesse {Joueur_Perso.caracteristique.get_sagesse}")
 
-pprint(Joueur_Perso)
+
+
+pprint(Joueur_Perso.caracteristique)

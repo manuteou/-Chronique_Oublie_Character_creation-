@@ -12,8 +12,7 @@ class Personnages:
         self.age = age
         self.taille = taille
         self.poids = poids
-        self.caracteristique = Caractéristiques
-
+        self.caracteristique = Caractéristiques()
 
     def get_nom_personnage(self):
         return self.nom_personnage
