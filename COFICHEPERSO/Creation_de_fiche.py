@@ -1,4 +1,3 @@
-from pprint import pprint
 import random
 from COFICHEPERSO.Personnages import Personnages
 from COFICHEPERSO.Caracteristiques import Caractéristiques
@@ -133,13 +132,13 @@ print (f"Valeurs du lancé de dé : {roll}")
 choix = int(input("Quelle valeur pour la caracteristique Charisme :"))
 Joueur_Perso.caracteristique.set_charisme(attribution(choix)+cha)
 
-print(f"\tJoueur {Joueur_Perso.get_nom_joueur}\t Nom du Heros {Joueur_Perso.get_nom_personnage}"
-      f"\t Niveau {Joueur_Perso.get_niveau}\n\t Age {Joueur_Perso.get_age} \t Taille {Joueur_Perso.get_taille}"
-      f"\t Poids {Joueur_Perso.set_poids}\t Sexe {Joueur_Perso.set_sexe}\n \t Force : {Joueur_Perso.caracteristique.get_force}"
-      f"\n\t Dexterité :{Joueur_Perso.caracteristique.get_dexterité}\n\t Intelligence : {Joueur_Perso.caracteristique.get_inteligence}"
-      f"\n\t Constitution {Joueur_Perso.caracteristique.get_constitution}\n\t Charisme :{Joueur_Perso.caracteristique.get_charisme}"
-      f"\n\t Sagesse {Joueur_Perso.caracteristique.get_sagesse}")
+print(f"\tJoueur {Joueur_Perso.nom_joueur}\t Nom du Heros {Joueur_Perso.nom_personnage}"
+      f"\t Niveau {Joueur_Perso.niveau}\n\t Age {Joueur_Perso.age} \t Taille {Joueur_Perso.taille:0.2f}"
+      f"\t Poids {Joueur_Perso.poids}\t Sexe {Joueur_Perso.sexe}\n \t Force : {Joueur_Perso.caracteristique.force}"
+      f"\n\t Dexterité :{Joueur_Perso.caracteristique.dexterité}\n\t Intelligence : {Joueur_Perso.caracteristique.inteligence}"
+      f"\n\t Constitution {Joueur_Perso.caracteristique.constitution}\n\t Charisme :{Joueur_Perso.caracteristique.charisme}"
+      f"\n\t Sagesse {Joueur_Perso.caracteristique.sagesse}")
 
 
 
-pprint(Joueur_Perso.caracteristique)
+
