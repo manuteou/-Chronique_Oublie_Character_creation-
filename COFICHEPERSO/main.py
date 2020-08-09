@@ -56,63 +56,21 @@ ig_att.mainloop()
 
 #Boucles qui definissent les bonus d'attributs, la taille, le poids et l'age du personnage
 if race_choix == 1:
-    race = "Demi-Elfe"
-    age = random.randint(20, 100)
-    poids = random.randint(40, 80)
-    taille = random.uniform(1.50, 1.90)
-    sag = 2
-    con = -2
+    joueur = Personnages.Demi_Elfe(nom_joueur, nom_personnage, genre, 80, 40, 20, 100, 1.5, 1.9)
 elif race_choix == 2:
-    race = "Demi-Orques"
-    age = random.randint(15, 50)
-    poids = random.randint(40, 80)
-    taille = random.uniform(1.70, 2.10)
-    str = 2
-    inte = -2
-    cha = -2
+    joueur = Personnages.Demi_Orques(nom_joueur, nom_personnage, genre, 80, 40, 15, 50, 1.7, 2.1)
 elif race_choix == 3:
-    race = "Elfe-Haut"
-    age = random.randint(80, 400)
-    poids = random.randint(40, 70)
-    taille = random.uniform(1.50, 1.80)
-    str = -2
-    cha = 2
+    joueur = Personnages.Elfes_Hauts(nom_joueur, nom_personnage, genre, 70, 40, 80, 400, 1.5, 1.8)
 elif race_choix == 4:
-    race = "Elfe-Sylvain"
-    age = random.randint(50, 300)
-    poids = random.randint(30, 60)
-    taille = random.uniform(1.40, 1.70)
-    str = -2
-    dex = 2
+    joueur = Personnages.Elfes_Sylvains(nom_joueur, nom_personnage, genre, 60, 30, 50, 300, 1.4, 1.7)
 elif race_choix == 5:
-    race = "Gnome"
-    age = random.randint(40, 250)
-    poids = random.randint(30, 50)
-    taille = random.uniform(1, 1.20)
-    str = -2
-    inte = 2
+    joueur = Personnages.Gnomes(nom_joueur, nom_personnage, genre, 50, 30, 40, 250, 1, 1.2)
 elif race_choix == 6:
-    race = "Halflain"
-    age = random.randint(20, 100)
-    poids = random.randint(20, 30)
-    taille = random.uniform(0.80, 1)
-    str = -2
-    dex = 2
+    joueur = Personnages.Halfelins(nom_joueur, nom_personnage, genre, 30, 20, 20, 100, .8, 1)
 elif race_choix == 7:
-    race = "Humain"
-    age = random.randint(18, 100)
-    poids = random.randint(40, 120)
-    taille = random.uniform(1.50, 2.00)
+    joueur = Personnages.Humains(nom_joueur, nom_personnage, genre, 120, 40, 18, 100, 1.5, 2)
 elif race_choix == 8:
-    race = "Nain"
-    age = random.randint(40, 200)
-    poids = random.randint(50, 100)
-    taille = random.uniform(1.15, 1.35)
-    con = 2
-    dex = -2
+    joueur = Personnages.Nains(nom_joueur, nom_personnage, genre, 100, 50, 40, 200, 1.15, 1.35)
 
-#création du joueur
-joueur= Personnages.Personnages(nom_personnage=nom_personnage, nom_joueur=nom_joueur, race=race, age=age, poids=poids,
-                                 taille=taille, sexe=genre)
 
-print(joueur.nom_joueur)
+print(joueur.nom_personnage)
