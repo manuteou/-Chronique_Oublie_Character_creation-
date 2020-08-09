@@ -5,7 +5,7 @@ from COFICHEPERSO import Interface_Graphique
 from tkinter import *
 import random
 
-# lancement de la fenetre graphique
+# lancement de la fenetre graphique d'introduction
 
 def fenetre(image):
 
@@ -24,6 +24,8 @@ Btn = Button(main, text="Suite", width=5, height=2, command=main.destroy)
 Btn.pack()
 main.mainloop()
 
+# lancement de la  fenetre graphique du personnage
+
 ig_perso = Tk()
 ig_perso.title("Création de Personnage CO")
 ig_perso.minsize(700,360)
@@ -39,6 +41,20 @@ race_choix = interface.race_choix.get()
 # on detruit la fenetre
 ig_perso.destroy()
 
+# On ouvre la fenetre pour les attributs
+ig_att = Tk()
+ig_att.title("Création du Personnage CO")
+ig_att.minsize(700,360)
+interface = Interface_Graphique.Interface_Graphique_attribut(ig_att)
+ig_att.mainloop()
+
+
+# On detruit la fentre
+#ig_att.destroy()
+
+# Attribution des valeurs dans le personnage
+
+#Boucles qui definissent les bonus d'attributs, la taille, le poids et l'age du personnage
 if race_choix == 1:
     race = "Demi-Elfe"
     age = random.randint(20, 100)
@@ -98,3 +114,5 @@ elif race_choix == 8:
 #création du joueur
 joueur= Personnages.Personnages(nom_personnage=nom_personnage, nom_joueur=nom_joueur, race=race, age=age, poids=poids,
                                  taille=taille, sexe=genre)
+
+print(joueur.nom_joueur)
