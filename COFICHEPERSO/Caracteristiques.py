@@ -13,6 +13,7 @@ class Caractéristiques:
         return self.force
 
     def set_force(self, force):
+
         self.force = force
 
     def get_dexterité(self):

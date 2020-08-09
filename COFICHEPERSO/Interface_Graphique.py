@@ -54,8 +54,12 @@ class Interface_graphique_perso(tkinter.Frame):
         self.Btn.grid(column=2, row=12, sticky="se")
 
 
+
 class Interface_Graphique_attribut(tkinter.Frame):
     pass
 
 class Interface_Graphique_Fiche(tkinter.Frame):
     pass
+
+
+

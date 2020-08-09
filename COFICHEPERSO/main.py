@@ -2,13 +2,31 @@
 from COFICHEPERSO import Personnages
 from COFICHEPERSO import Caracteristiques
 from COFICHEPERSO import Interface_Graphique
-import tkinter
+from tkinter import *
 import random
 
-
 # lancement de la fenetre graphique
-ig_perso = tkinter.Tk()
-ig_perso.title("Création de Personnage Chronique oubliée")
+
+def fenetre(image):
+
+    canvas = Canvas(main,heigh=400,width=800)
+    canvas.create_image(400,300, image=image)
+    canvas.create_text(400,70, text="CHRONIQUES OUBLIEES\n Generateur de Personnage",font=("Helvetica",40))
+    canvas.pack(expand=YES)
+
+
+main = Tk()
+image = PhotoImage(file="Persos.png").subsample(2)
+main.geometry("800x600")
+main.title("Création de Personnage CO")
+fenetre(image)
+Btn = Button(main, text="Suite", width=5, height=2, command=main.destroy)
+Btn.pack()
+main.mainloop()
+
+ig_perso = Tk()
+ig_perso.title("Création de Personnage CO")
+ig_perso.minsize(700,360)
 interface = Interface_Graphique.Interface_graphique_perso(ig_perso)
 ig_perso.mainloop()
 
