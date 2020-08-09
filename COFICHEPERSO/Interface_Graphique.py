@@ -101,9 +101,9 @@ class Interface_Graphique_attribut(tkinter.Frame):
         self.constitution = tkinter.Entry(self, textvariable=self.saisie_constitution)
         self.constitution.grid(column=2, row=6)
 
-        self.saisie_inteligence = tkinter.IntVar()
-        self.inteligence = tkinter.Entry(self, textvariable=self.saisie_inteligence)
-        self.inteligence.grid(column=2, row=7)
+        self.saisie_intelligence = tkinter.IntVar()
+        self.intelligence = tkinter.Entry(self, textvariable=self.saisie_intelligence)
+        self.intelligence.grid(column=2, row=7)
 
         self.saisie_sagesse = tkinter.IntVar()
         self.sagesse = tkinter.Entry(self, textvariable=self.saisie_sagesse)

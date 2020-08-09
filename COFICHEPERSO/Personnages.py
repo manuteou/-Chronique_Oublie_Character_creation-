@@ -36,8 +36,7 @@ class Demi_Elfe(Nom,Physique):
         Nom.__init__(self,nom_personnage,nom_heros,genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         self.race = "Demi-Elfe"
-        self.bonus_sag = 2
-        self.bonus_cons = -2
+
 
 
 class Demi_Orques(Nom,Physique):
@@ -45,9 +44,7 @@ class Demi_Orques(Nom,Physique):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         self.race = "Demi-Orques"
-        self.bonus_for = 2
-        self.bonus_cha = -2
-        self.bonus_inte = -2
+
 
 
 class Elfes_Hauts(Nom,Physique):
@@ -55,8 +52,7 @@ class Elfes_Hauts(Nom,Physique):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         self.race = "Elfes Hauts"
-        self.bonus_cha = 2
-        self.bonus_for = -2
+
 
 
 class Elfes_Sylvains(Nom,Physique):
@@ -64,8 +60,7 @@ class Elfes_Sylvains(Nom,Physique):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         self.race = "Elfes Sylvains"
-        self.bonus_sag = 2
-        self.bonus_cons = -2
+
 
 
 class Gnomes(Nom,Physique):
@@ -73,8 +68,6 @@ class Gnomes(Nom,Physique):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         self.race = "Gnomes"
-        self.bonus_int = 2
-        self.bonus_for = -2
 
 
 class Halfelins(Nom,Physique):
@@ -82,8 +75,7 @@ class Halfelins(Nom,Physique):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         self.race = "Halfelins"
-        self.bonus_dex = 2
-        self.bonus_str = -2
+
 
 
 class Humains(Nom,Physique):
@@ -98,8 +90,7 @@ class Nains(Nom,Physique):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         self.race = "Nains"
-        self.bonus_con = 2
-        self.bonus_dex = -2
+
 
 
 
