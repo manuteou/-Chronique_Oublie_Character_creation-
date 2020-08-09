@@ -1,6 +1,6 @@
 import random
 from COFICHEPERSO.Personnage_Old import Personnages
-from COFICHEPERSO.Caracteristiques import Caractéristiques
+from COFICHEPERSO.Caracteristiques_Old import Caractéristiques
 
 roll = [random.randint(3,18) for r in range(6)] # Dés lancées pour la valeurs des caractériqtiques du personnage
 

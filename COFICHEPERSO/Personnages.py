@@ -1,10 +1,12 @@
 from random import randint, uniform
+from  COFICHEPERSO import Caractéristiques
 
 class Nom:
     def __init__(self, nom_personnage, nom_heros,genre):
         self.nom_personnage = nom_personnage
         self.nom_heros = nom_heros
         self.genre = genre
+        self.caracteristiques = Caractéristiques()
 
 
 class Physique:

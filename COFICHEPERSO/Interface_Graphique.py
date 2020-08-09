@@ -66,20 +66,56 @@ class Interface_Graphique_attribut(tkinter.Frame):
 
         self.roll_label = tkinter.Label(self,text="Génération alléatoire du lancé de dé:")
         self.roll_label.grid(column=1, row=1)
+
         self.roll = tkinter.Label(self, text=Interface_Graphique_attribut.roll,font=",25")
         self.roll.grid(column=2, row=1)
-        self.force_label =tkinter.Label(self,text="Force:")
+
+        self.force_label =tkinter.Label(self, text="Force:")
         self.force_label.grid(column=1, row=4)
-        self.dext_label =tkinter.Label(self,text="Dexterité:")
+
+        self.dext_label =tkinter.Label(self, text="Dexterité:")
         self.dext_label.grid(column=1, row=5)
-        self.cons_label =tkinter.Label(self,text="Consitution:")
+
+        self.cons_label =tkinter.Label(self, text="Consitution:")
         self.cons_label.grid(column=1, row=6)
-        self.intel_label =tkinter.Label(self,text="Intelligence:")
+
+        self.intel_label =tkinter.Label(self, text="Intelligence:")
         self.intel_label.grid(column=1, row=7)
-        self.sag_label =tkinter.Label(self,text="Sagesse:")
+
+        self.sag_label =tkinter.Label(self, text="Sagesse:")
         self.sag_label.grid(column=1, row=8)
-        self.char_label = tkinter.Label(self,text="Charisme:")
+
+        self.char_label = tkinter.Label(self, text="Charisme:")
         self.char_label.grid(column=1, row=9)
+
+        #champs pour taper les valeurs
+        self.saisie_force = tkinter.IntVar()
+        self.force = tkinter.Entry(self, textvariable=self.saisie_force)
+        self.force.grid(column=2, row=4)
+
+        self.saisie_dexterité = tkinter.IntVar()
+        self.dexterité = tkinter.Entry(self, textvariable=self.saisie_dexterité)
+        self.dexterité.grid(column=2, row=5)
+
+        self.saisie_constitution = tkinter.IntVar()
+        self.constitution = tkinter.Entry(self, textvariable=self.saisie_constitution)
+        self.constitution.grid(column=2, row=6)
+
+        self.saisie_inteligence = tkinter.IntVar()
+        self.inteligence = tkinter.Entry(self, textvariable=self.saisie_inteligence)
+        self.inteligence.grid(column=2, row=7)
+
+        self.saisie_sagesse = tkinter.IntVar()
+        self.sagesse = tkinter.Entry(self, textvariable=self.saisie_sagesse)
+        self.sagesse.grid(column=2, row=8)
+
+        self.saisie_charisme = tkinter.IntVar()
+        self.charisme = tkinter.Entry(self, textvariable=self.saisie_charisme)
+        self.charisme.grid(column=2, row=9)
+
+# Sortie de la boucle
+        self.Btn = tkinter.Button(self, text="Valider", width=5, height=2, command=self.quit)
+        self.Btn.grid(column=2, row=12, sticky="se")
 
 
 class Interface_Graphique_Fiche(tkinter.Frame):

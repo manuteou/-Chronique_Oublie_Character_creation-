@@ -1,4 +1,4 @@
-from COFICHEPERSO.Caracteristiques import Caractéristiques
+from COFICHEPERSO.Caracteristiques_Old import Caractéristiques
 
 class Personnages:
     """" Class qui definie le type  du personnage et son aspect physique"""
