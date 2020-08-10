@@ -21,7 +21,8 @@ def generation_perso():
     ig_perso = Tk()
     ig_perso.title("Création de Personnage CO")
     ig_perso.minsize(700, 360)
-    interface = Interface_graphique_perso(ig_perso, [randint(3, 18) for r in range(6)])
+    roll = [randint(3, 18) for r in range(6)]
+    interface = Interface_graphique_perso(ig_perso, roll)
     ig_perso.mainloop()
 
     # on recupere les variables
@@ -61,7 +62,7 @@ def generation_perso():
     elif race_choix == 8:
         joueur = Personnages.Nains(nom_joueur, nom_personnage, genre, 100, 50, 40, 200, 1.15, 1.35,
                                    force, dexterite - 2, constitution + 2, intelligence, sagesse, charisme)
-    # ig_att.destroy()
+
     ig_perso.destroy()
 
     return joueur
@@ -72,17 +73,17 @@ def creation_pdf(pdf):
 
     image = Path("fiche_perso.png")
     pdf.drawImage(image, 0, 0)
-    pdf.drawString(30, 750, joueur.nom_personnage)
-    pdf.drawString(30, 730, joueur.nom_heros)
-    pdf.drawString(30, 720, joueur.genre)
-    pdf.drawString(30, 710, joueur.taille)
-    pdf.drawString(30, 700, joueur.age)
-    pdf.drawString(30, 690, joueur.poids)
-    pdf.drawString(30, 680, joueur.force)
-    pdf.drawString(30, 670, joueur.dexterite)
-    pdf.drawString(30, 660, joueur.constitution)
-    pdf.drawString(30, 650, joueur.charisme)
-    pdf.drawString(30, 640, joueur.sagesse)
+    pdf.drawString(400, 668, joueur.nom_personnage)
+    pdf.drawString(145, 668, joueur.nom_heros)
+    #pdf.drawString(30, 720, joueur.genre)
+    #pdf.drawString(30, 710, joueur.taille)
+    #pdf.drawString(30, 700, joueur.age)
+    #pdf.drawString(30, 690, joueur.poids)
+    #pdf.drawString(30, 680, joueur.force)
+    #pdf.drawString(30, 670, joueur.dexterite)
+    #pdf.drawString(30, 660, joueur.constitution)
+    #pdf.drawString(30, 650, joueur.charisme)
+    #pdf.drawString(30, 640, joueur.sagesse)
 
 
 # lancement de la fenetre graphique d'introduction

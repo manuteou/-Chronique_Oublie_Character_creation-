@@ -6,8 +6,8 @@ from pathlib import Path
 class Interface_graphique_perso(tkinter.Frame):
     """ Création de l'interface graphique saisie du joueur"""
 
-    def __init__(self, fenetre, roll):
-        tkinter.Frame.__init__(self, fenetre, roll)
+    def __init__(self, fenetre,roll):
+        tkinter.Frame.__init__(self, fenetre)
         self.roll = roll
         self.grid()
 
@@ -59,8 +59,8 @@ class Interface_graphique_perso(tkinter.Frame):
         self.roll_label = tkinter.Label(self, text="Lancé des dés:")
         self.roll_label.grid(column=2, row=3)
 
-        self.roll = tkinter.Label(self, text=self.roll, font=",25")
-        self.roll.grid(column=3, row=3)
+        self.roll_value = tkinter.Label(self, text=self.roll,font=",25")
+        self.roll_value.grid(column=3, row=3)
 
         self.force_label = tkinter.Label(self, text="Force:")
         self.force_label.grid(column=2, row=4)
@@ -110,4 +110,5 @@ class Interface_graphique_perso(tkinter.Frame):
         self.Btn.grid(column=2, row=12, sticky="se")
 
 class Interface_graphique_Introduction():
-    
+    pass
+
