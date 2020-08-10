@@ -1,7 +1,9 @@
 from random import randint, uniform
 
+
 class Nom:
     """Classe qui definie les info nominatifs du joueur"""
+
     def __init__(self, nom_personnage, nom_heros, genre):
         self.nom_personnage = nom_personnage
         self.nom_heros = nom_heros
@@ -43,20 +45,20 @@ class Physique:
     def calcul_taille(self, t_min, t_max):
         self.taille = uniform(t_min, t_max)
 
+
 # Classes filles qui regroupent les classes mere et rajoutent la race
 
-class Demi_Elfe(Nom, Physique,Caracteristiques):
-
+class Demi_Elfe(Nom, Physique, Caracteristiques):
 
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
                  force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
-        Caracteristiques.__init__(self,force, dexterite, constitution, intelligence, sagesse, charisme)
+        Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Demi-Elfe"
 
 
-class Demi_Orques(Nom, Physique):
+class Demi_Orques(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
                  force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
@@ -65,7 +67,7 @@ class Demi_Orques(Nom, Physique):
         self.race = "Demi-Orques"
 
 
-class Elfes_Hauts(Nom, Physique):
+class Elfes_Hauts(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
                  force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
@@ -74,7 +76,7 @@ class Elfes_Hauts(Nom, Physique):
         self.race = "Elfes Hauts"
 
 
-class Elfes_Sylvains(Nom, Physique):
+class Elfes_Sylvains(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
                  force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
@@ -83,7 +85,7 @@ class Elfes_Sylvains(Nom, Physique):
         self.race = "Elfes Sylvains"
 
 
-class Gnomes(Nom, Physique):
+class Gnomes(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
                  force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
@@ -92,7 +94,7 @@ class Gnomes(Nom, Physique):
         self.race = "Gnomes"
 
 
-class Halfelins(Nom, Physique):
+class Halfelins(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
                  force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
@@ -101,7 +103,7 @@ class Halfelins(Nom, Physique):
         self.race = "Halfelins"
 
 
-class Humains(Nom, Physique):
+class Humains(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
                  force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
@@ -110,7 +112,7 @@ class Humains(Nom, Physique):
         self.race = "Humains"
 
 
-class Nains(Nom, Physique):
+class Nains(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
                  force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)

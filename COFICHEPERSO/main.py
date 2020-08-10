@@ -1,8 +1,10 @@
 # Programme principal
 from COFICHEPERSO import Personnages
-from COFICHEPERSO import Interface_Graphique
+from COFICHEPERSO.Interface_Graphique import Interface_graphique_perso
 from tkinter import *
 from reportlab.pdfgen import canvas
+from pathlib import Path
+from random import randint
 
 
 def fenetre(image):
@@ -13,15 +15,13 @@ def fenetre(image):
     canvas.pack(expand=YES)
 
 
-
 def generation_perso():
     """ fonction qui genere un joueur"""
     # lancement de la  fenetre graphique du personnage
-
     ig_perso = Tk()
     ig_perso.title("Création de Personnage CO")
     ig_perso.minsize(700, 360)
-    interface = Interface_Graphique.Interface_graphique_perso(ig_perso)
+    interface = Interface_graphique_perso(ig_perso, [randint(3, 18) for r in range(6)])
     ig_perso.mainloop()
 
     # on recupere les variables
@@ -30,7 +30,7 @@ def generation_perso():
     nom_personnage = interface.nom_perso.get()
     genre = interface.genre_choix.get()
     force = int(interface.force.get())
-    dexterite = int(interface.dexterité.get())
+    dexterite = int(interface.dexterite.get())
     constitution = int(interface.constitution.get())
     intelligence = int(interface.intelligence.get())
     charisme = int(interface.charisme.get())
@@ -61,16 +61,17 @@ def generation_perso():
     elif race_choix == 8:
         joueur = Personnages.Nains(nom_joueur, nom_personnage, genre, 100, 50, 40, 200, 1.15, 1.35,
                                    force, dexterite - 2, constitution + 2, intelligence, sagesse, charisme)
-    #ig_att.destroy()
+    # ig_att.destroy()
     ig_perso.destroy()
 
     return joueur
 
+
 def creation_pdf(pdf):
     """ Generation du pdf"""
 
-    # image = "fiche_perso.png"
-     # pdf.drawImage(image, 0, 0, width=None, height=None)
+    image = Path("fiche_perso.png")
+    pdf.drawImage(image, 0, 0)
     pdf.drawString(30, 750, joueur.nom_personnage)
     pdf.drawString(30, 730, joueur.nom_heros)
     pdf.drawString(30, 720, joueur.genre)
@@ -82,6 +83,7 @@ def creation_pdf(pdf):
     pdf.drawString(30, 660, joueur.constitution)
     pdf.drawString(30, 650, joueur.charisme)
     pdf.drawString(30, 640, joueur.sagesse)
+
 
 # lancement de la fenetre graphique d'introduction
 main = Tk()
