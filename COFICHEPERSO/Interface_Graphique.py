@@ -2,7 +2,7 @@ import tkinter
 from random import randint
 
 class Interface_graphique_perso(tkinter.Frame):
-
+    roll = [randint(3, 18) for r in range(6)]  # Dés lancées pour la valeurs des caractériqtiques du personnage
     def __init__(self, fenetre):
         tkinter.Frame.__init__(self, fenetre)
         self.grid()
@@ -33,14 +33,14 @@ class Interface_graphique_perso(tkinter.Frame):
         self.race_label.grid(column=0, row=3)
 
         self.race_choix = tkinter.IntVar()
-        self.radio_DE = tkinter.Radiobutton(self, text="Demi-Elfe", value=1, variable=self.race_choix)
-        self.radio_DO = tkinter.Radiobutton(self, text="Demi-Orque", value=2, variable=self.race_choix)
-        self.radio_EH = tkinter.Radiobutton(self, text="Elfe Haut", value=3, variable=self.race_choix)
-        self.radio_ES = tkinter.Radiobutton(self, text="Elfe Sylvain", value=4, variable=self.race_choix)
-        self.radio_Gn = tkinter.Radiobutton(self, text="Gnome", value=5, variable=self.race_choix)
-        self.radio_Ha = tkinter.Radiobutton(self, text="Halfelin", value=6, variable=self.race_choix)
+        self.radio_DE = tkinter.Radiobutton(self, text="Demi-Elfe\t(Con-2/Sag+2)", value=1, variable=self.race_choix)
+        self.radio_DO = tkinter.Radiobutton(self, text="Demi-Orque\t(For+2/Int-2/Chr-2", value=2, variable=self.race_choix)
+        self.radio_EH = tkinter.Radiobutton(self, text="Elfe Haut\t(For-2/Chr+2)", value=3, variable=self.race_choix)
+        self.radio_ES = tkinter.Radiobutton(self, text="Elfe Sylvain\t(Con-2/Sag+2)", value=4, variable=self.race_choix)
+        self.radio_Gn = tkinter.Radiobutton(self, text="Gnome\t(for-2/int+2)", value=5, variable=self.race_choix)
+        self.radio_Ha = tkinter.Radiobutton(self, text="Halfelin\t(for-2,dex+2)", value=6, variable=self.race_choix)
         self.radio_Hu = tkinter.Radiobutton(self, text="Humain", value=7, variable=self.race_choix)
-        self.radio_Na = tkinter.Radiobutton(self, text="Nain", value=8, variable=self.race_choix)
+        self.radio_Na = tkinter.Radiobutton(self, text="Nain\t(dex-2,con+2)", value=8, variable=self.race_choix)
         self.radio_DE.grid(column=0, row=4, sticky="W")
         self.radio_DO.grid(column=0, row=5, sticky="W")
         self.radio_EH.grid(column=0, row=6, sticky="W")
@@ -50,76 +50,60 @@ class Interface_graphique_perso(tkinter.Frame):
         self.radio_Hu.grid(column=0, row=10, sticky="W")
         self.radio_Na.grid(column=0, row=11, sticky="W")
 
-        # Sortie de la boucle
-        self.Btn = tkinter.Button(self, text="Valider", width=5, height=2, command=self.quit)
-        self.Btn.grid(column=2, row=12, sticky="se")
 
+        self.roll_label = tkinter.Label(self,text="Lancé des dés:")
+        self.roll_label.grid(column=2, row=3)
 
+        self.roll = tkinter.Label(self, text=Interface_graphique_perso.roll, font=",25")
+        self.roll.grid(column=3, row=3)
 
-class Interface_Graphique_attribut(tkinter.Frame):
+        self.force_label = tkinter.Label(self, text="Force:")
+        self.force_label.grid(column=2, row=4)
 
-    roll = [randint(3, 18) for r in range(6)]  # Dés lancées pour la valeurs des caractériqtiques du personnage
-    def __init__(self,fenetre):
-        tkinter.Frame.__init__(self, fenetre)
-        self.grid()
+        self.dext_label = tkinter.Label(self, text="Dexterité:")
+        self.dext_label.grid(column=2, row=5)
 
+        self.cons_label = tkinter.Label(self, text="Consitution:")
+        self.cons_label.grid(column=2, row=6)
 
-        self.roll_label = tkinter.Label(self,text="Génération alléatoire du lancé de dé:")
-        self.roll_label.grid(column=1, row=1)
+        self.intel_label = tkinter.Label(self, text="Intelligence:")
+        self.intel_label.grid(column=2, row=7)
 
-        self.roll = tkinter.Label(self, text=Interface_Graphique_attribut.roll,font=",25")
-        self.roll.grid(column=2, row=1)
-
-        self.force_label =tkinter.Label(self, text="Force:")
-        self.force_label.grid(column=1, row=4)
-
-        self.dext_label =tkinter.Label(self, text="Dexterité:")
-        self.dext_label.grid(column=1, row=5)
-
-        self.cons_label =tkinter.Label(self, text="Consitution:")
-        self.cons_label.grid(column=1, row=6)
-
-        self.intel_label =tkinter.Label(self, text="Intelligence:")
-        self.intel_label.grid(column=1, row=7)
-
-        self.sag_label =tkinter.Label(self, text="Sagesse:")
-        self.sag_label.grid(column=1, row=8)
+        self.sag_label = tkinter.Label(self, text="Sagesse:")
+        self.sag_label.grid(column=2, row=8)
 
         self.char_label = tkinter.Label(self, text="Charisme:")
-        self.char_label.grid(column=1, row=9)
+        self.char_label.grid(column=2, row=9)
 
         #champs pour taper les valeurs
         self.saisie_force = tkinter.IntVar()
         self.force = tkinter.Entry(self, textvariable=self.saisie_force)
-        self.force.grid(column=2, row=4)
+        self.force.grid(column=3, row=4)
 
         self.saisie_dexterité = tkinter.IntVar()
         self.dexterité = tkinter.Entry(self, textvariable=self.saisie_dexterité)
-        self.dexterité.grid(column=2, row=5)
+        self.dexterité.grid(column=3, row=5)
 
         self.saisie_constitution = tkinter.IntVar()
         self.constitution = tkinter.Entry(self, textvariable=self.saisie_constitution)
-        self.constitution.grid(column=2, row=6)
+        self.constitution.grid(column=3, row=6)
 
         self.saisie_intelligence = tkinter.IntVar()
         self.intelligence = tkinter.Entry(self, textvariable=self.saisie_intelligence)
-        self.intelligence.grid(column=2, row=7)
+        self.intelligence.grid(column=3, row=7)
 
         self.saisie_sagesse = tkinter.IntVar()
         self.sagesse = tkinter.Entry(self, textvariable=self.saisie_sagesse)
-        self.sagesse.grid(column=2, row=8)
+        self.sagesse.grid(column=3, row=8)
 
         self.saisie_charisme = tkinter.IntVar()
         self.charisme = tkinter.Entry(self, textvariable=self.saisie_charisme)
-        self.charisme.grid(column=2, row=9)
+        self.charisme.grid(column=3, row=9)
 
-# Sortie de la boucle
-        self.Btn = tkinter.Button(self, text="Valider", width=5, height=2, command=self.quit)
+        # Sortie de la boucle
+        self.Btn = tkinter.Button(self, text="Valider et generer PDF", command=self.quit)
         self.Btn.grid(column=2, row=12, sticky="se")
 
-
-class Interface_Graphique_Fiche(tkinter.Frame):
-    pass
 
 
 

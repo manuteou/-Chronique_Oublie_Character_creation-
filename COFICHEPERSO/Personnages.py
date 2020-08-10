@@ -1,15 +1,28 @@
 from random import randint, uniform
-from  COFICHEPERSO import Caractéristiques
 
 class Nom:
-    def __init__(self, nom_personnage, nom_heros,genre):
+    """Classe qui definie les info nominatifs du joueur"""
+    def __init__(self, nom_personnage, nom_heros, genre):
         self.nom_personnage = nom_personnage
         self.nom_heros = nom_heros
         self.genre = genre
-        self.caracteristiques = Caractéristiques()
+
+
+class Caracteristiques:
+    """ Classe qui definie les attributs du personnage"""
+
+    def __init__(self, force, dexterite, constitution, intelligence, sagesse, charisme):
+        self.force = force
+        self.dexterite = dexterite
+        self.constitution = constitution
+        self.intelligence = intelligence
+        self.sagesse = sagesse
+        self.charisme = charisme
 
 
 class Physique:
+    """Classe qui definie le physique du personnage"""
+
     def __init__(self, p_max, p_min, a_min, a_max, t_min, t_max):
         self.p_max = p_max
         self.p_min = p_min
@@ -30,69 +43,77 @@ class Physique:
     def calcul_taille(self, t_min, t_max):
         self.taille = uniform(t_min, t_max)
 
+# Classes filles qui regroupent les classes mere et rajoutent la race
 
-class Demi_Elfe(Nom,Physique):
-    def __init__(self, nom_personnage, nom_heros,genre,p_max, p_min, a_min, a_max, t_min, t_max):
-        Nom.__init__(self,nom_personnage,nom_heros,genre)
+class Demi_Elfe(Nom, Physique,Caracteristiques):
+
+
+    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
+                 force, dexterite, constitution, intelligence, sagesse, charisme):
+        Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
+        Caracteristiques.__init__(self,force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Demi-Elfe"
 
 
-
-class Demi_Orques(Nom,Physique):
-    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max):
+class Demi_Orques(Nom, Physique):
+    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
+                 force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
+        Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Demi-Orques"
 
 
-
-class Elfes_Hauts(Nom,Physique):
-    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max):
+class Elfes_Hauts(Nom, Physique):
+    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
+                 force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
+        Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Elfes Hauts"
 
 
-
-class Elfes_Sylvains(Nom,Physique):
-    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max):
+class Elfes_Sylvains(Nom, Physique):
+    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
+                 force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
+        Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Elfes Sylvains"
 
 
-
-class Gnomes(Nom,Physique):
-    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max):
+class Gnomes(Nom, Physique):
+    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
+                 force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
+        Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Gnomes"
 
 
-class Halfelins(Nom,Physique):
-    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max):
+class Halfelins(Nom, Physique):
+    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
+                 force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
+        Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Halfelins"
 
 
-
-class Humains(Nom,Physique):
-    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max):
+class Humains(Nom, Physique):
+    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
+                 force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
+        Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Humains"
 
 
-class Nains(Nom,Physique):
-    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max):
+class Nains(Nom, Physique):
+    def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
+                 force, dexterite, constitution, intelligence, sagesse, charisme):
         Nom.__init__(self, nom_personnage, nom_heros, genre)
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
+        Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Nains"
-
-
-
-
-
-
