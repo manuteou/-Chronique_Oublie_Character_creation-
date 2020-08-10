@@ -1,6 +1,6 @@
 # Programme principal
 from COFICHEPERSO import Personnages
-from COFICHEPERSO.Interface_Graphique import Interface_graphique_perso
+from COFICHEPERSO.Interface_Graphique import Interface_graphique_perso,Interface_graphique_Introduction
 from tkinter import *
 from reportlab.pdfgen import canvas
 from pathlib import Path
@@ -30,7 +30,7 @@ def generation_perso():
         genre = "Homme"
     elif interface.genre_choix.get() == 2:
         genre = "femme"
-    elif interface.genre_choice.get() == 3:
+    elif interface.genre_choix.get() == 3:
         genre = "Autre"
 
 
@@ -69,7 +69,7 @@ def creation_pdf(pdf):
 
     image = Path("fiche_perso.png")
     pdf.drawImage(image, 0, 0)
-    pdf.drawString(400, 668, str(joueur.nom_personnage))
+    pdf.drawString(400, 668, str(joueur.nom_personnage),)
     pdf.drawString(145, 668, str(joueur.nom_heros))
 
     pdf.drawString(220, 623, str(joueur.race))
@@ -86,16 +86,13 @@ def creation_pdf(pdf):
     pdf.drawString(80, 450, str(joueur.charisme))
 
 
-# lancement de la fenetre graphique d'introduction
+# lancement de la fenetre graphique d'introduction pour faire jolie
 main = Tk()
 image = PhotoImage(file="Persos.png").subsample(2)
-main.geometry("800x600")
-main.title("Création de Personnage CO")
-fenetre(image)
-Btn = Button(main, text="Suite", width=5, height=2, command=main.destroy)
-Btn.pack()
+Interface_graphique_Introduction(main, image)
 main.mainloop()
 
+# On genere le joueur
 joueur = generation_perso()
 
 # création du pdf

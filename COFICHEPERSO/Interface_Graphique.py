@@ -110,5 +110,17 @@ class Interface_graphique_perso(tkinter.Frame):
         self.Btn.grid(column=2, row=12, sticky="se")
 
 class Interface_graphique_Introduction():
-    pass
+
+    def __init__(self, main, image):
+
+        self.main = main
+        self.main.geometry("800x600")
+        self.main.title("Création de Personnage CO")
+        self.canvas = tkinter.Canvas(self.main, heigh=400, width=800)
+        self.canvas.create_image(400, 300, image=image)
+        self.canvas.create_text(400, 70, text="CHRONIQUES OUBLIEES\n Generateur de Personnage", font=("Helvetica", 40))
+        self.canvas.pack()
+        self.Btn = tkinter.Button(self.main, text="Suite", width=5, height=2, command=main.destroy)
+        self.Btn.pack()
+
 
