@@ -56,7 +56,9 @@ class Demi_Elfe(Nom, Physique, Caracteristiques):
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Demi-Elfe"
-
+        self.calcul_poids(p_min,p_max)
+        self.calcul_age(a_min,a_max)
+        self.calcul_taille(t_min,t_max)
 
 class Demi_Orques(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
@@ -65,7 +67,9 @@ class Demi_Orques(Nom, Physique, Caracteristiques):
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Demi-Orques"
-
+        self.calcul_poids(p_min, p_max)
+        self.calcul_age(a_min, a_max)
+        self.calcul_taille(t_min, t_max)
 
 class Elfes_Hauts(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
@@ -74,7 +78,9 @@ class Elfes_Hauts(Nom, Physique, Caracteristiques):
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Elfes Hauts"
-
+        self.calcul_poids(p_min, p_max)
+        self.calcul_age(a_min, a_max)
+        self.calcul_taille(t_min, t_max)
 
 class Elfes_Sylvains(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
@@ -83,7 +89,9 @@ class Elfes_Sylvains(Nom, Physique, Caracteristiques):
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Elfes Sylvains"
-
+        self.calcul_poids(p_min, p_max)
+        self.calcul_age(a_min, a_max)
+        self.calcul_taille(t_min, t_max)
 
 class Gnomes(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
@@ -92,7 +100,9 @@ class Gnomes(Nom, Physique, Caracteristiques):
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Gnomes"
-
+        self.calcul_poids(p_min, p_max)
+        self.calcul_age(a_min, a_max)
+        self.calcul_taille(t_min, t_max)
 
 class Halfelins(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
@@ -101,7 +111,9 @@ class Halfelins(Nom, Physique, Caracteristiques):
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Halfelins"
-
+        self.calcul_poids(p_min, p_max)
+        self.calcul_age(a_min, a_max)
+        self.calcul_taille(t_min, t_max)
 
 class Humains(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
@@ -110,7 +122,9 @@ class Humains(Nom, Physique, Caracteristiques):
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Humains"
-
+        self.calcul_poids(p_min, p_max)
+        self.calcul_age(a_min, a_max)
+        self.calcul_taille(t_min, t_max)
 
 class Nains(Nom, Physique, Caracteristiques):
     def __init__(self, nom_personnage, nom_heros, genre, p_max, p_min, a_min, a_max, t_min, t_max,
@@ -119,3 +133,6 @@ class Nains(Nom, Physique, Caracteristiques):
         Physique.__init__(self, p_max, p_min, a_min, a_max, t_min, t_max)
         Caracteristiques.__init__(self, force, dexterite, constitution, intelligence, sagesse, charisme)
         self.race = "Nains"
+        self.calcul_poids(p_min, p_max)
+        self.calcul_age(a_min, a_max)
+        self.calcul_taille(t_min, t_max)
