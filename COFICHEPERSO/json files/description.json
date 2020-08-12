@@ -1,0 +1,6 @@
+
+[
+{"race_name": "Demi-Elfes", "age": {"min":20,"max":150}, "poids":{"min":40,"max":80},"taille":{"min":150,"max": 190 }},
+  {"race_name": "Humain", "age": {"min":18,"max":100}, "poids":{"min":40,"max":120},"taille":{"min":150,"max": 200 }}
+
+]

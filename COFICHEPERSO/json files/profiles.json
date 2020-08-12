@@ -1,0 +1,8 @@
+[
+  {"profile_name": "Barbare","life_dice": 12,"level": 1,
+    "stuff": {"Hache à 2 mains": "DM 2d6","2 Javelots (20m)": "DM 1d6",
+      "Dague": "DM 1d4","armure de cuir": "Def +2"}},
+  {"profile_name": "Magicien","life_dice": 4,"level": 1,
+    "stuff": {"Baton ferré": "DM 1d6","Dague": "DM 1d4",
+      "grimoire": "","potion de soin": "1d8 PV"}}
+]

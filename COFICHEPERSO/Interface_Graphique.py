@@ -1,10 +1,28 @@
 import tkinter
 from pathlib import Path
 
+from tkinter import *
+import json
+
+race_list=["elfe","humain","nain"]
+with open(".\json files\description.json","r") as write_file:
+    race_list=json.load(write_file)
+
+for race in race_list:
+    race_name = race["race_name"]
+
+print(race_name)
+main = Tk()
+lb = Listbox()
+for i, race in enumerate(race_name,1):
+    lb.insert(i, race)
+lb.pack()
+main.mainloop()
 
 
+"""Old
 class Interface_graphique_perso(tkinter.Frame):
-    """ Création de l'interface graphique saisie du joueur"""
+   """ """ Création de l'interface graphique saisie du joueur""""""
 
     def __init__(self, fenetre,roll):
         tkinter.Frame.__init__(self, fenetre)
@@ -122,5 +140,5 @@ class Interface_graphique_Introduction():
         self.canvas.pack()
         self.Btn = tkinter.Button(self.main, text="Suite", width=5, height=2, command=main.destroy)
         self.Btn.pack()
-
+"""
 
