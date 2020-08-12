@@ -5,6 +5,8 @@ from tkinter import *
 from reportlab.pdfgen import canvas
 from pathlib import Path
 from random import randint
+import pickle
+
 
 
 def fenetre(image):
@@ -94,6 +96,14 @@ main.mainloop()
 
 # On genere le joueur
 joueur = generation_perso()
+
+"""
+# Sauvegarde du joueur
+save_list_players = {joueur.nom_personnage: joueur}
+with open("players_files.txt", "ab") as save_players:
+    pickle.dump(save_list_players, save_players)
+"""
+
 
 # création du pdf
 nom_pdf = str(joueur.nom_personnage) + "_" + str(joueur.nom_heros) + ".pdf"
