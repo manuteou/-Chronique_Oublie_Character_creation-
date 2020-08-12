@@ -1,6 +1,6 @@
 from tkinter import *
-from COFICHEPERSO.Interface_Graphique import Interface_graphique_perso
-from COFICHEPERSO import Characters
+#from COFICHEPERSO.Interface_Graphique import Interface_graphique_perso
+from COFICHEPERSO.Character import Character
 import json
 from random import randint
 
@@ -17,7 +17,7 @@ profile_selection = "Magicien"
 
 #loading Characters_race
 characters_race = []
-with open("json files/description.json", "r") as write_file:
+with open("json files/races_list.json", "r") as write_file:
    characters_race = json.load(write_file)
 
 # race's selection
@@ -37,12 +37,8 @@ for profile in characters_profile:
 
 # player's creation
 
-attribut = {"for": 0, "dex": 0, "con": 0, "int": 0, "cha": 0, "sag": 0}
-description = {"age": randint(((race["age"])["min"]), ((race["age"])["max"])),
-               "taille": randint(((race["taille"])["min"]), ((race["taille"])["max"])),
-               "poids": randint(((race["poids"])["min"]), ((race["poids"])["max"])),
+{"age": randint(race_choice["age"]["min"], race_choice["age"]["max"]),
+               "taille": randint(race_choice["taille"]["min"], race_choice["taille"]["max"]),
+               "poids": randint(race_choice["poids"]["min"], race_choice["poids"]["max"]),
                "genre": "autre"}
 
-player = Characters.Character(attribut=attribut, description=description, profile=profile)
-print(race["race_name"] == race_choice)
-print(player.player, player.character_name, "\n", player.description, "\n", player.attribut, "\n", player.profile)

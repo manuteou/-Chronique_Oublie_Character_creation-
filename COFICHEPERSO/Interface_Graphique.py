@@ -1,21 +1,17 @@
 import tkinter
 from pathlib import Path
-
 from tkinter import *
 import json
 
-race_list=["elfe","humain","nain"]
+race_list=[]
 with open(".\json files\description.json","r") as write_file:
     race_list=json.load(write_file)
 
-for race in race_list:
-    race_name = race["race_name"]
 
-print(race_name)
 main = Tk()
 lb = Listbox()
-for i, race in enumerate(race_name,1):
-    lb.insert(i, race)
+for i, race in enumerate(race_list, 1):
+    lb.insert(i, race["race_name"])
 lb.pack()
 main.mainloop()
 
