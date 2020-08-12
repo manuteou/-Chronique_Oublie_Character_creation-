@@ -17,21 +17,22 @@ window.mainloop()
 """
  # use for create a jion files for working with it after, will be delete a the end
 """
-characters_race = {"Demi-Elfes":{"age_min":40,"age_max":200,"p_min":30,"p_max":70}}
+characters_race = {"race": "Demi-Elfes", "age": {"min":40,"max":200}, "poids":{"min":30,"max":70}}
 with open("characters_race.json", "a") as write_file:
     json.dump(characters_race, write_file, separators=(",", ":"))
 """
-# aim is too open json files and select the race for traitements
+# aim is for open json files and select the race for traitements
 race_choice = "Humain"
-characters_race = []
-with open("Description_races.json", "r") as write_file:
-    characters_race = json.load(write_file)
-    for row in write_file:
-        characters_race.append([row])
 
-for i in characters_race:
-    if race_choice in characters_race[i]:
-        print(characters_race[i])
+characters_race = []
+with open("characters_race.json", "r") as write_file:
+   characters_race = json.load(write_file)
+   for row in write_file:
+       characters_race.append([row])
+
+#for i in characters_race:
+    #if race_choice in characters_race[i]:
+        #print(characters_race)
 
 
 """

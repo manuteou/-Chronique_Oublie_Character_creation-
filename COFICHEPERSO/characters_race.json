@@ -1,0 +1,9 @@
+
+[
+{"race": "Demi-Elfes",
+"age": {"min":40,"max":200},
+"poids":{"min":30,"max":70}},
+  {"race": "Demi-Elfes",
+"age": {"min":40,"max":200},
+"poids":{"min":30,"max":70}}
+]
