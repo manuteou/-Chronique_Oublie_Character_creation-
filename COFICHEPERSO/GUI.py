@@ -4,14 +4,13 @@ import json
 from random import randint
 
 
-
 class GUI(Frame):
     """
         Graphique class for character selection
                                                 """
 
-    def __init__(self,window, roll, race_list, profile_list):
-        Frame. __init__(self, window)
+    def __init__(self, window, roll, race_list, profile_list):
+        Frame.__init__(self, window)
         self.grid()
         self.roll = roll
         self.race_list = race_list
@@ -20,7 +19,7 @@ class GUI(Frame):
         self.player_name = Label(self, text="Nom du joueur")
         self.player_name.grid(column=0, row=0)
 
-        self.player_variable= StringVar()
+        self.player_variable = StringVar()
         self.player_name_entry = Entry(self, textvariable=self.player_variable)
         self.player_name_entry.grid(column=0, row=1)
         # player's hero name entry
@@ -57,7 +56,7 @@ class GUI(Frame):
         attribut = ["Force", "Dexterité", "Constitution", "Intelligence", "Charisme", "Sagesse"]
         row = 3
         for i in attribut:
-            row +=1
+            row += 1
             self.attribut_label = Label(self, text=i)
             self.attribut_label.grid(column=0, row=row)
 
@@ -86,14 +85,52 @@ class GUI(Frame):
         self.Cha_Value = Entry(self, textvariable=self.Grab_Cha)
         self.Cha_Value.grid(column=1, row=9)
 
+        self.bonus_label = Label(self, text="Bonus de race")
+        self.bonus_label.grid(column=3, row=2)
+        self.lb_bonus = Listbox(self, bd=1, exportselection=0, bg='grey', selectbackground='grey')
+        for i, row in enumerate(race_list, 1):
+            self.lb_bonus.insert(i, max(row["modif"]) + min((row["modif"])))
+        self.lb_bonus.grid(column=3, row=3)
+
+        self.info_life = Label(self, text="Dé VIE")
+        self.info_life.grid(column=4, row=2)
+        self.life_lb = Listbox(self, bd=3, exportselection=0, bg='grey', selectbackground='grey')
+        for i, row in enumerate(profile_list, 1):
+            self.life_lb.insert(i, row["life_dice"])
+        self.life_lb.grid(column=4, row=3)
+
+        self.get_gender_value = IntVar()
+        self.gender_label = Label(self, text="Genre      =>")
+        self.gender_label.grid(column=3, row=4)
+        gender = ["Homme", "Femme ", "Autre    "]
+        row = 1
+        for i in gender:
+            row += 3
+            self.gender_rb = Radiobutton(self, text=i, value=row, anchor="e", padx=20, variable=self.get_gender_value)
+            self.gender_rb.grid(column=4, row=row)
+
         # Sortie de la boucle
         self.Btn = Button(self, text="Valider et generer PDF", command=self.quit)
         self.Btn.grid(column=1, row=12)
         self.Btn = Button(self, text="Quitter", command=self.destroy)
         self.Btn.grid(column=0, row=12)
 
-if __name__ == '__main__':
 
+class GUI_Intro():
+
+    def __init__(self, main, image):
+        self.main = main
+        self.image = image
+        self.main.geometry("800x600")
+        self.main.title("Création de Personnage CO")
+        self.canvas = Canvas(self.main, heigh=400, width=800)
+        self.canvas.create_image(400, 300, image=self.image)
+        self.canvas.create_text(400, 70, text="CHRONIQUES OUBLIEES\n Generateur de Personnage", font=("Helvetica", 40))
+        self.canvas.pack()
+        self.Btn = Button(self.main, text="Suite", width=5, height=2, command=main.destroy)
+        self.Btn.pack()
+
+if __name__ == '__main__':
     roll_dice = [randint(3, 18) for r in range(6)]
     race_list = []
     characters_profile = []
@@ -110,21 +147,3 @@ if __name__ == '__main__':
     print(GUI.hero_name_entry.get())
     print(GUI.lb_race.get(first=ANCHOR))
     print(GUI.lb_profile.get(first=ANCHOR))
-
-
-
-class GUI_Intro():
-
-    def __init__(self, main, image):
-
-        self.main = main
-        self.main.geometry("800x600")
-        self.main.title("Création de Personnage CO")
-        self.canvas = Canvas(self.main, heigh=400, width=800)
-        self.canvas.create_image(400, 300, image=image)
-        self.canvas.create_text(400, 70, text="CHRONIQUES OUBLIEES\n Generateur de Personnage", font=("Helvetica", 40))
-        self.canvas.pack()
-        self.Btn = Button(self.main, text="Suite", width=5, height=2, command=main.destroy)
-        self.Btn.pack()
-
-
