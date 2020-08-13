@@ -1,12 +1,10 @@
 # Programme principal
-from COFICHEPERSO import Personnages
-from COFICHEPERSO.Interface_Graphique import Interface_graphique_perso,Interface_graphique_Introduction
+from COFICHEPERSO.Old import Personnages
+from COFICHEPERSO.GUI import Interface_graphique_perso,Interface_graphique_Introduction
 from tkinter import *
 from reportlab.pdfgen import canvas
 from pathlib import Path
 from random import randint
-import pickle
-
 
 
 def fenetre(image):
@@ -53,7 +51,7 @@ def generation_perso():
                                     int(interface.force.get()) - 2, int(interface.dexterite.get()), int(interface.constitution.get()), int(interface.intelligence.get()) + 2, int(interface.sagesse.get()), int(interface.charisme.get()))
     elif interface.race_choix.get() == 6:
         joueur = Personnages.Halfelins(interface.race_choix.get(), interface.nom_perso.get(), genre, 30, 20, 20, 100, .8, 1,
-                                       int(interface.force.get()) - 2, int(interface.dexterite.get()) + 2, int(interface.constitution.get()), int(interface.intelligence.get()),int(interface.sagesse.get()), int(interface.charisme.get()))
+                                       int(interface.force.get()) - 2, int(interface.dexterite.get()) + 2, int(interface.constitution.get()), int(interface.intelligence.get()), int(interface.sagesse.get()), int(interface.charisme.get()))
     elif interface.race_choix.get() == 7:
         joueur = Personnages.Humains(interface.race_choix.get(), interface.nom_perso.get(), genre, 120, 40, 18, 100, 1.5, 2,
                                      int(interface.force.get()), int(interface.dexterite.get()), int(interface.constitution.get()), int(interface.intelligence.get()), int(interface.sagesse.get()), int(interface.charisme.get()))
@@ -69,7 +67,7 @@ def generation_perso():
 def creation_pdf(pdf):
     """ Generation du pdf"""
 
-    image = Path("fiche_perso.png")
+    image = Path("../Images/fiche_perso.png")
     pdf.drawImage(image, 0, 0)
     pdf.drawString(400, 668, str(joueur.nom_personnage),)
     pdf.drawString(145, 668, str(joueur.nom_heros))
@@ -90,7 +88,7 @@ def creation_pdf(pdf):
 
 # lancement de la fenetre graphique d'introduction pour faire jolie
 main = Tk()
-image = PhotoImage(file="Persos.png").subsample(2)
+image = PhotoImage(file="../Images/Persos.png").subsample(2)
 Interface_graphique_Introduction(main, image)
 main.mainloop()
 
