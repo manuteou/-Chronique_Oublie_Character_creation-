@@ -1,17 +1,18 @@
 from tkinter import *
-from COFICHEPERSO.GUI import GUI,GUI_Intro
+from COFICHEPERSO.GUI import GUI, GUI_Intro
 from COFICHEPERSO.Character_Class import Character
 import json
 from random import randint
 from pathlib import Path
 from reportlab.pdfgen import canvas
 
+
 def pdf_genrator(pdf):
     """ create a pdf with the value from player's selection"""
 
-    image = Path("../Images/fiche_perso.png")
+    image = Path("Images/fiche_perso.png")
     pdf.drawImage(image, 0, 0)
-    pdf.drawString(400, 668, str(player.player_name),)
+    pdf.drawString(400, 668, str(player.player_name), )
     pdf.drawString(145, 668, str(player.character_name))
 
     pdf.drawString(220, 623, str(player.race))
@@ -27,10 +28,11 @@ def pdf_genrator(pdf):
     pdf.drawString(80, 470, str(player.attribut["cha"]))
     pdf.drawString(80, 450, str(player.attribut["sag"]))
 
-#loading Characters_race
+
+# loading Characters_race
 characters_race_list = []
 with open("json files/races_list.json", "r") as write_file:
-   characters_race_list = json.load(write_file)
+    characters_race_list = json.load(write_file)
 
 # loading Characters_profile
 characters_profile_list = []
@@ -38,19 +40,18 @@ with open("json files/profiles_list.json", "r") as write_file:
     characters_profile_list = json.load(write_file)
 
 window_intro = Tk()
-image_intro = PhotoImage("Persos.png").subsample(2)
+image_intro = PhotoImage("Images/Persos.png").subsample(2)
 IGU_intro = GUI_Intro(window_intro, image_intro)
 window_intro.mainloop()
 
 window = Tk()
 roll = [randint(3, 18) for r in range(6)]
-GUI_player_selection = GUI(window, roll, characters_race_list,characters_profile_list)
+GUI_player_selection = GUI(window, roll, characters_race_list, characters_profile_list)
 window.mainloop()
 
 # race selected via GUI
 race_user_selection = GUI_player_selection.lb_race.get(first=ANCHOR)
 profile_user_selection = GUI_player_selection.lb_profile.get(first=ANCHOR)
-
 
 # race's selection
 for race in characters_race_list:

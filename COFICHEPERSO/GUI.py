@@ -88,8 +88,14 @@ class GUI(Frame):
         self.bonus_label = Label(self, text="Bonus de race")
         self.bonus_label.grid(column=3, row=2)
         self.lb_bonus = Listbox(self, bd=1, exportselection=0, bg='grey', selectbackground='grey')
-        for i, row in enumerate(race_list, 1):
-            self.lb_bonus.insert(i, max(row["modif"]) + min((row["modif"])))
+        i = 1
+        for racial_bonus in race_list:
+            modif = ""
+            i += 1
+            for stat, value in racial_bonus["modif"].items():
+                if value != 0:
+                    modif += f"{stat} {value}  "
+            self.lb_bonus.insert(i, modif)
         self.lb_bonus.grid(column=3, row=3)
 
         self.info_life = Label(self, text="Dé VIE")
@@ -116,7 +122,7 @@ class GUI(Frame):
         self.Btn.grid(column=0, row=12)
 
 
-class GUI_Intro():
+class GUI_Intro ():
 
     def __init__(self, main, image):
         self.main = main
