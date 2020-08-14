@@ -40,7 +40,7 @@ with open("json files/profiles_list.json", "r") as write_file:
     characters_profile_list = json.load(write_file)
 
 window_intro = Tk()
-image_intro = PhotoImage("Images/Persos.png").subsample(2)
+image_intro = PhotoImage(file=Path("Images/Persos.png")).subsample(2)
 IGU_intro = GUI_Intro(window_intro, image_intro)
 window_intro.mainloop()
 

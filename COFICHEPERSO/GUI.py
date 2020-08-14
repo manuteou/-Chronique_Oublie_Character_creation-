@@ -15,6 +15,7 @@ class GUI(Frame):
         self.roll = roll
         self.race_list = race_list
         self.profile_list = profile_list
+
         # player's name entry
         self.player_name = Label(self, text="Nom du joueur")
         self.player_name.grid(column=0, row=0)
@@ -136,20 +137,3 @@ class GUI_Intro ():
         self.Btn = Button(self.main, text="Suite", width=5, height=2, command=main.destroy)
         self.Btn.pack()
 
-if __name__ == '__main__':
-    roll_dice = [randint(3, 18) for r in range(6)]
-    race_list = []
-    characters_profile = []
-    with open("json files/races_list.json", "r") as write_file:
-        race_list = json.load(write_file)
-    with open("json files/profiles_list.json", "r") as write_file:
-        profile_list = json.load(write_file)
-
-    window = Tk()
-    GUI = GUI(window, roll_dice, race_list, profile_list)
-    window.mainloop()
-
-    print(GUI.player_name_entry.get())
-    print(GUI.hero_name_entry.get())
-    print(GUI.lb_race.get(first=ANCHOR))
-    print(GUI.lb_profile.get(first=ANCHOR))
