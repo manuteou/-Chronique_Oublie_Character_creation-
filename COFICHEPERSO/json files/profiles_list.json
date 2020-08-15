@@ -1,8 +1,16 @@
 [
-  {"profile_name": "Barbare","life_dice": 12,"level": 1,
-    "stuff": {"Hache à 2 mains": "DM 2d6","2 Javelots (20m)": "DM 1d6",
-      "Dague": "DM 1d4","armure de cuir": "Def +2"}},
-  {"profile_name": "Magicien","life_dice": 4,"level": 1,
-    "stuff": {"Baton ferré": "DM 1d6","Dague": "DM 1d4",
-      "grimoire": "","potion de soin": "1d8 PV"}}
+  {"profile_name": "Arquebusier","life_dice": 8,"level": 1},
+  {"profile_name": "Barbare","life_dice": 12,"level": 1},
+  {"profile_name": "Barde","life_dice": 6,"level": 1},
+  {"profile_name": "Chevalier","life_dice": 10,"level": 1},
+  {"profile_name": "Druide","life_dice": 8,"level": 1},
+  {"profile_name": "Ensorceleur","life_dice": 4,"level": 1},
+  {"profile_name": "Forgesort","life_dice": 4,"level": 1},
+  {"profile_name": "Guerrier","life_dice": 10,"level": 1},
+  {"profile_name": "Magicien","life_dice": 4,"level": 1},
+  {"profile_name": "Moine","life_dice": 8,"level": 1},
+  {"profile_name": "Necromancien","life_dice": 4,"level": 1},
+  {"profile_name": "Pretre","life_dice": 8,"level": 1},
+  {"profile_name": "Rodeur","life_dice": 8,"level": 1},
+  {"profile_name": "Voleur","life_dice": 6,"level": 1}
 ]

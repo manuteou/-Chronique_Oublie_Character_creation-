@@ -1,27 +1,51 @@
 
 [
-{"race_name": "Demi-Elfes", "age": {"min":20,"max":150}, "poids":{"min":40,"max":80},
+{
+  "race_name": "Demi-Elfes", "age": {"min":20,"max":150}, "poids":{"min":40,"max":80},
   "taille":{"min":150,"max": 190 },
-  "modif": {"for": -2, "dex": 0, "con": 0, "int": 0, "cha": 0, "sag": 2}},
-  {"race_name": "Demi-Orques", "age": {"min":15,"max":60}, "poids":{"min":70,"max":150},
+  "modif": {"for": -2, "dex": 0, "con": 0, "int": 0, "sag": 2,"cha": 0},
+  "capacite raciale": "Sang mele"
+},
+  {
+    "race_name": "Demi-Orques", "age": {"min":15,"max":60}, "poids":{"min":70,"max":150},
     "taille":{"min":170,"max": 210 },
-    "modif": {"for": 2, "dex": 0, "con": 0, "int": -2, "cha": -2, "sag": 0}},
-  {"race_name": "Nain", "age": {"min":40,"max":250}, "poids":{"min":50,"max":100},
+    "modif": {"for": 2, "dex": 0, "con": 0, "int": -2, "sag": 0, "cha": -2},
+    "capacite raciale":"Vision dans le noir"
+  },
+  {
+    "race_name": "Nain", "age": {"min":40,"max":250}, "poids":{"min":50,"max":100},
     "taille":{"min":115,"max": 135 },
-    "modif": {"for": 0, "dex": -2, "con": 2, "int": 0, "cha": 0, "sag": 0}},
-  {"race_name": "Elfe Haut", "age": {"min":80,"max":450}, "poids":{"min":40,"max":70},
+    "modif": {"for": 0, "dex": -2, "con": 2, "int": 0, "sag": 0, "cha": 0},
+    "capacite raciale":"Vision dans le noir"
+  },
+  {
+    "race_name": "Elfe Haut", "age": {"min":80,"max":450}, "poids":{"min":40,"max":70},
     "taille":{"min":150,"max": 180 },
-    "modif": {"for": -2, "dex": 0, "con": 0, "int": 0, "cha": 2, "sag": 0}},
-  {"race_name": "Elfe Sylvain", "age": {"min":50,"max":350}, "poids":{"min":30,"max":60},
+    "modif": {"for": -2, "dex": 0, "con": 0, "int": 0, "sag": 0, "cha": 2},
+    "capacite raciale":"Lumiere des etoiles"
+  },
+  {
+    "race_name": "Elfe Sylvain", "age": {"min":50,"max":350}, "poids":{"min":30,"max":60},
     "taille":{"min":140,"max": 170 },
-    "modif": {"for": -2, "dex": 2, "con": 0, "int": 0, "cha": 0, "sag": 0}},
-  {"race_name": "Gnome", "age": {"min":40,"max":250}, "poids":{"min":30,"max":60},
+    "modif": {"for": -2, "dex": 2, "con": 0, "int": 0, "sag": 0, "cha": 0},
+    "capacite raciale":"Lumiere des etoiles"
+  },
+  {
+    "race_name": "Gnome", "age": {"min":40,"max":250}, "poids":{"min":30,"max":60},
     "taille":{"min":100,"max": 120 },
-    "modif": {"for": -2, "dex": 0, "con": 0, "int": 2, "cha": 0, "sag": 0}},
-  {"race_name": "Halfelin", "age": {"min":20,"max":150}, "poids":{"min":20,"max":30},
+    "modif": {"for": -2, "dex": 0, "con": 0, "int": 2, "sag": 0, "cha": 0},
+    "capacite raciale":"Don etrange"
+  },
+  {
+    "race_name": "Halfelin", "age": {"min":20,"max":150}, "poids":{"min":20,"max":30},
     "taille":{"min":80,"max": 100 },
-    "modif": {"for": -2, "dex": 2, "con": 0, "int": 0, "cha": 0, "sag": 0}},
-  {"race_name": "Humain", "age": {"min":18,"max":100}, "poids":{"min":40,"max":120},
+    "modif": {"for": -2, "dex": 2, "con": 0, "int": 0, "sag": 0, "cha": 0},
+    "capacite raciale":"Petite taille"
+  },
+  {
+    "race_name": "Humain", "age": {"min":18,"max":100}, "poids":{"min":40,"max":120},
     "taille":{"min":150,"max": 200 },
-    "modif": {"for": 0, "dex": 0, "con": 0, "int": 0, "cha": 0, "sag": 0}}
+    "modif": {"for": 0, "dex": 0, "con": 0, "int": 0, "sag": 0, "cha": 0},
+    "capacite raciale":"Instinct de survie"
+  }
 ]
