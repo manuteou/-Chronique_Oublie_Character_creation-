@@ -34,7 +34,7 @@ def pdf_genrator(pdf):
     pdf.drawString(112, 515, str(player.attribut_modification["com"]))
     pdf.drawString(112, 492, str(player.attribut_modification["itm"]))
     pdf.drawString(112, 470, str(player.attribut_modification["sam"]))
-    pdf.drawString(112, 450, str(player.attribut_modification["chm"]))
+    pdf.drawString(112, 450, str(player.attribut_modification["cam"]))
 
     pdf.drawString(427, 560, str(player.life_dice))
     pdf.drawString(175, 623, str(player.level))

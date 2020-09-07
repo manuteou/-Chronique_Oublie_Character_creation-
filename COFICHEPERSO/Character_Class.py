@@ -6,7 +6,7 @@ class Character():
     }
     attribut_modification = {
         "fom": 0, "dem": 0, "com": 0,
-        "itm": 0, "chm": 0, "sam": 0
+        "itm": 0, "cam": 0, "sam": 0
     }
     age = 0
     size = 0
