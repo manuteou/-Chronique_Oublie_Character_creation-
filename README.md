@@ -1,1 +1,2 @@
-# Cr-ation-de-fiche-perso-CO
+# Role playing game CHRONIQUES OUBLIEES
+CHARACTER'S SHEET PDF GENERATOR
